@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.vivek.crud.exception.ResourceNotFoundException;
 import com.vivek.crud.model.Master;
 import com.vivek.crud.repository.MasterRepository;
-
+@CrossOrigin(origins="*",allowedHeaders="*")
 @RestController
 @RequestMapping("api/v1")
 public class MasterController {
