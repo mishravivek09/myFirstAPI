@@ -36,12 +36,12 @@ public class MasterController {
         return ResponseEntity.ok().body(master);
     }
 	
-	@PostMapping("/master")
+	@PostMapping("/master/add")
     public Master createEmployee(@Validated @RequestBody Master master) {
         return masterRepository.save(master);
     }
 	
-	@PutMapping("/master/{id}")
+	@PutMapping("/master/update/{id}")
     public ResponseEntity<Master> updateEmployee(@PathVariable(value = "id") Long masterId,
          @Validated @RequestBody Master masterData) throws ResourceNotFoundException {
         Master master = masterRepository.findById(masterId)
@@ -56,7 +56,7 @@ public class MasterController {
         return ResponseEntity.ok(updatedMaster);
     }
 	
-	@DeleteMapping("/employees/{id}")
+	@DeleteMapping("/master/delete/{id}")
     public Map<String, Boolean> deleteEmployee(@PathVariable(value = "id") Long masterId)
          throws ResourceNotFoundException {
         Master master = masterRepository.findById(masterId)
