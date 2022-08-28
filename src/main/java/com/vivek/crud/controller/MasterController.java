@@ -13,11 +13,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.vivek.crud.exception.ResourceNotFoundException;
 import com.vivek.crud.model.Master;
 import com.vivek.crud.repository.MasterRepository;
-//@CrossOrigin(origins="*",allowedHeaders="*")
+@CrossOrigin(origins = "*",allowedHeaders = "*")
 @RestController
 @RequestMapping("api/v1")
 public class MasterController {
