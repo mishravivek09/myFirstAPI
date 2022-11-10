@@ -67,8 +67,8 @@ public class MasterController {
         response.put("deleted", Boolean.TRUE);
         return response;
     }
-	@GetMapping("/master/query")
-	public List<Master> getByName(@RequestParam String name){
+	@GetMapping("/master/query/{name}")
+	public List<Master> getByName(@PathVariable("name") String name){
 		return masterRepository.findByNameLike(name);
 	}
 }
