@@ -69,6 +69,6 @@ public class MasterController {
     }
 	@getMapping("/master/name")
 	public List<Master> getByName(@RequestParam String name){
-		return moviesRepository.findByNameLike(name);
+		return masterRepository.findByNameLike(name);
 	}
 }
