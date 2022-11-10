@@ -67,4 +67,8 @@ public class MasterController {
         response.put("deleted", Boolean.TRUE);
         return response;
     }
+	@getMapping("/master/name")
+	public List<Master> getByName(@RequestParam String name){
+		return moviesRepository.findByNameLike(name);
+	}
 }
